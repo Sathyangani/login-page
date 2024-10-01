@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container" id="container">
+        <!-- Login Form -->
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign In</h1>
+                <input type="text" placeholder="User Name" required />
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required /><br>
+                
+                <button>Log In</button>
+               
+            </form>
+            
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <input type="text" class="input-field" placeholder="Name" required>
+                <input type="text" class="input-field" placeholder="Address" required>
+                <input type="tel" class="input-field" placeholder="Contact Number" required>
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="password" class="input-field" placeholder="Password" required>
+                <button>Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay-container img">
+            <div class="overlay">
+                <div class="overlay-panel overlay-center">
+                    <h1>Welcome Back!</h1>
+                    <p>If you already have an account, please login in here</p>
+                    <button class="ghost" id="signIn">Login In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Customer!</h1>
+                    <p>Don't have an account? Sign up here</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                    
+                </div>
+            </div>
+             
+        </div>
+       
+        
+    </div>
+    
+    
+    <script>
+        function validateSignup() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const errorMessage = document.getElementById("error-message");
+
+            // Clear previous error message
+            errorMessage.innerHTML = "";
+
+            if (password !== confirmPassword) {
+                errorMessage.innerHTML = "Passwords do not match.";
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+   
+     
+        function validateLogin() {
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+            const loginErrorMessage = document.getElementById("login-error-message");
+
+            // Clear previous error message
+            loginErrorMessage.innerHTML = "";
+
+            // Example validation (replace with actual authentication logic)
+            const validEmail = "user@example.com"; // Example email
+            const validPassword = "password123"; // Example password
+
+            if (email !== validEmail || password !== validPassword) {
+                loginErrorMessage.innerHTML = "Email or password does not match.";
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
+        
+       
+            </script>
+        <script src="script.js"></script>
+   
+</body>
+</html>
